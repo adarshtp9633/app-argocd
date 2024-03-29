@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: searchengine 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: searchengine
+  template:
+    metadata:
+      labels:
+        app: searchengine 
+    spec:
+      containers:
+        - name: searchengine 
+          image: rpamacr.azurecr.io/searchengine
+          ports:
+          - containerPort: 3000
