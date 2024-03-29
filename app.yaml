@@ -1,19 +1,21 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: searchengine 
+  name: nginx-deployment
+  labels:
+    app: nginx
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: searchengine
+      app: nginx
   template:
     metadata:
       labels:
-        app: searchengine 
+        app: nginx
     spec:
       containers:
-        - name: searchengine 
-          image: rpamacr.azurecr.io/searchengine
-          ports:
-          - containerPort: 3000
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
