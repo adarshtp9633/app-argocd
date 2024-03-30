@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
 <<<<<<< HEAD
-  name: nginx-locall
+  name: nginx-locall-2
 =======
   name: nginx-gitt
 >>>>>>> 5237f647fe27600c48f6d43f1b05cc9eaa1a3330
